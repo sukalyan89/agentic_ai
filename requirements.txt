@@ -1,0 +1,9 @@
+streamlit>=1.35.0
+chromadb
+crewai
+numpy
+pandas
+pypdf
+python-dotenv
+scikit-learn
+sentence-transformers
