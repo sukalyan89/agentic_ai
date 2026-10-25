@@ -1,0 +1,354 @@
+Regional Retail & Wholesale Co.
+Detailed Company Policy Handbook | Version 1.0 | Sample for Training and Demonstration
+
+1. General Order Management Policy
+1.1 Purpose and scope
+This policy governs the creation, confirmation, modification, cancellation, and fulfillment of retail and wholesale orders across all company stores and sales channels.
+
+Every transaction must be traceable through a unique Order ID.
+1.2 Order placement and confirmation
+Customers may place orders through authorized stores, company-operated online platforms, or registered sales representatives.
+
+An order is considered confirmed only when:
+- Product availability has been verified.
+- Customer information is complete.
+- Pricing and applicable discounts have been validated.
+- Payment has been authorized or approved credit terms have been established.
+- A unique Order ID has been generated.
+An order acknowledgement does not guarantee fulfillment until these conditions are satisfied.
+1.3 Order modification and cancellation
+Order status	Customer action	Policy
+Pending confirmation	Modify or cancel	Allowed without charge
+Confirmed, not dispatched	Modify or cancel	Allowed subject to inventory and payment adjustments
+Dispatched	Request cancellation	Subject to shipment interception or return policy
+Delivered	Request cancellation	Handled as a return
+Returned	Request refund	Subject to return inspection and approval
+
+Customers must provide the original Order ID when requesting changes.
+1.4 Wholesale order conditions
+Wholesale customers may receive volume-based pricing and negotiated fulfillment terms.
+
+Orders of 10 or more units may require additional stock verification. Orders of 50 or more units require sales manager approval unless covered by a preapproved agreement.
+1.5 Responsibilities
+Sales representatives are responsible for order accuracy. Store managers handle inventory and fulfillment exceptions. Regional managers approve exceptional bulk orders and unresolved cancellations.
+
+Example: A customer orders three monitors and requests a change to five before dispatch. The sales representative checks inventory, recalculates the total price, obtains payment authorization for any difference, and records the modification against the original Order ID.
+
+2. Pricing, Discounts and Promotional Policy
+2.1 Pricing principles
+The company maintains standardized product pricing, subject to approved store-specific, customer-specific, and promotional adjustments.
+
+The standard order calculation is:
+\[
+\text{Product Total} = Q \times P \times (1-d)
+\]
+
+Where \(Q\) is quantity, \(P\) is unit price, and \(d\) is the applicable discount rate. Shipping charges and applicable taxes are then added or accounted for according to the transaction's pricing structure.
+2.2 Discount authorization
+Discount level	Approval requirement
+0–10%	Authorized sales representative
+Above 10% to 20%	Store manager
+Above 20% to 30%	Regional manager
+Above 30%	Commercial director
+
+These approval thresholds apply to discretionary discounts, not centrally approved promotions.
+2.3 Promotional codes
+Sample promotional codes include:
+- SAVE10: 10% discount on eligible products.
+- WINTER15: 15% seasonal discount on qualifying orders.
+- FREESHIP: Waiver of standard shipping charges for eligible deliveries.
+Promotions may have validity periods, minimum purchase amounts, product exclusions, or geographic restrictions.
+
+Only one promotional code may be applied per order unless a specific campaign permits stacking.
+2.4 Pricing disputes
+If a customer disputes an invoice amount, the sales team must verify the recorded unit price, quantity, discount, promotional code, and shipping charge.
+
+Confirmed overcharges must be corrected and any refund initiated within 7 business days.
+
+Example: A customer purchases a laptop priced at ₹60,000 with an approved 10% discount. The discounted product price is ₹54,000, excluding any separately applicable tax or shipping charge. If the invoice incorrectly charges ₹60,000, the company must investigate and correct the discrepancy.
+
+3. Payment and Refund Policy
+3.1 Accepted payment methods
+The company accepts credit cards, debit cards, cash, gift cards, and approved online payment channels.
+
+Payments must be made in the transaction currency displayed at checkout. Customers must receive a payment confirmation or receipt.
+3.2 Payment verification
+Payments may be subject to additional verification where the transaction presents an elevated risk, including unusually high-value purchases, inconsistent customer information, or repeated failed payment attempts.
+
+The company must not retain full payment-card credentials in ordinary sales records.
+3.3 Refund eligibility
+Refunds may be approved for canceled orders, eligible returns, duplicate payments, confirmed overcharges, and qualifying defective products.
+
+Refunds should normally be returned to the original payment method. Exceptions require documented approval.
+3.4 Refund processing timelines
+Stage	Target timeline
+Refund request acknowledgement	2 business days
+Return inspection after receipt	3 business days
+Refund decision after inspection	2 business days
+Refund initiation after approval	7 business days
+Customer notification	Upon initiation
+
+The time taken for funds to appear in the customer's account depends on the payment provider or bank.
+3.5 Partial refunds
+Partial refunds may be offered where an order contains multiple items and only some are returned, or where a customer accepts compensation for a minor product issue.
+
+Refunds must be calculated using the amount actually paid for the affected products, accounting for discounts and promotions.
+
+Example: A wholesale customer purchases ten chairs and returns two eligible units. The refund is based on the discounted price paid for those two units, subject to any applicable return charges and statutory rights.
+
+4. Delivery and Shipping Policy
+4.1 Delivery coverage
+The company provides delivery services across the North, South, East, West, and Central sales regions, subject to courier availability and product restrictions.
+
+Delivery estimates must be communicated before order confirmation.
+4.2 Standard delivery timelines
+Delivery category	Target delivery time
+Local delivery	1–3 business days
+Standard regional delivery	3–7 business days
+Interregional delivery	5–10 business days
+Bulk wholesale delivery	7–15 business days
+
+These are service targets, not guaranteed delivery dates unless explicitly stated in the order agreement.
+4.3 Shipping charges
+Shipping costs may depend on the destination, product dimensions, weight, order value, and delivery service.
+
+Shipping charges must be disclosed before order confirmation. Eligible FREESHIP promotions waive standard shipping charges but may exclude express delivery or special handling.
+4.4 Delayed delivery
+If an order is delayed beyond its estimated delivery window, the logistics team must investigate and provide an updated delivery estimate.
+
+For delays exceeding 5 business days beyond the promised delivery date, customers may request cancellation and a refund where permitted by applicable law and the order agreement.
+4.5 Damaged or missing deliveries
+Customers are encouraged to report visible package damage within 48 hours of receipt and missing deliveries promptly after the expected delivery date.
+
+The company will review delivery records, carrier confirmation, and available evidence. Failure to report within 48 hours does not automatically eliminate statutory rights.
+
+Example: An order scheduled for delivery on November 5 arrives on November 12. Customer support verifies the carrier records and determines whether the customer qualifies for a delivery-charge refund or another remedy.
+
+5. Return and Exchange Policy
+5.1 Return eligibility
+Retail customers may request a return within 15 calendar days of delivery for eligible products.
+
+To qualify for a standard change-of-mind return, the product should be unused, in resaleable condition, and accompanied by its original accessories and proof of purchase.
+
+Defective, incorrectly supplied, or damaged products are handled under the applicable consumer rights and warranty provisions, even when standard return conditions are not satisfied.
+5.2 Category-specific rules
+Product category	Standard return window	Special conditions
+Laptop	15 days	Remove personal data before return
+Phone	15 days	Disable account locks and remove personal data
+Tablet	15 days	Factory reset where possible
+Monitor	15 days	Include cables and accessories
+Printer	15 days	Return cartridges and accessories as supplied, subject to usage conditions
+Desk	15 days	Disassembly may be required
+Chair	15 days	No significant wear or damage
+
+5.3 Nonreturnable items
+Change-of-mind returns may be refused for customized products, products materially damaged through customer misuse, and other goods clearly identified as nonreturnable before purchase, subject to applicable law.
+5.4 Return procedure
+1. Submit request: Customer provides Order ID, product details, and return reason.
+2. Eligibility review: Support checks delivery date, product category, and return conditions.
+3. Return authorization: Company provides return instructions and a reference number.
+4. Inspection: Returned item is examined for condition, completeness, and reported defects.
+5. Resolution: Customer receives an approved refund, replacement, or exchange.
+
+5.5 Wholesale returns
+Wholesale returns are subject to the terms of the applicable purchase agreement. Standard change-of-mind returns for bulk purchases require manager approval.
+
+Claims involving defective products or incorrect fulfillment must be reviewed independently of any discretionary wholesale return restriction.
+
+Example: A customer purchases a monitor on October 1 and receives it on October 4. A standard return request submitted on October 15 falls within the 15-day window, assuming the product meets the other eligibility requirements.
+
+6. Customer Complaint and Dispute Resolution Policy
+6.1 Scope
+This policy covers complaints involving incorrect charges, delayed deliveries, damaged products, missing items, unauthorized transactions, rejected returns, and service quality.
+6.2 Complaint registration
+Each complaint must be assigned a unique complaint reference and linked to the original Order ID.
+
+The complaint record should contain the issue category, submission date, relevant evidence, assigned employee, current status, and resolution details.
+6.3 Complaint priority
+Priority	Examples	Target resolution
+Critical	Suspected payment fraud, serious safety issue	1–2 business days for urgent action
+High	Missing delivery, significant overcharge	3 business days
+Medium	Refund delay, defective product	7 business days
+Low	General service dissatisfaction	10 business days
+
+These are internal service-level targets. Complex investigations may require more time, with updates provided to the customer.
+6.4 Escalation procedure
+Customer Support
+Complaint registration and initial investigation
+Store Manager
+Unresolved operational or refund issues
+Regional Manager
+Complex disputes and policy exceptions
+Compliance / Legal Team
+Regulatory, legal, or unresolved formal complaints
+
+6.5 Dispute closure
+A complaint may be closed when a resolution has been communicated, supporting actions have been completed, and the outcome is recorded.
+
+Customers must be informed of available escalation channels when they disagree with the decision.
+
+Example: A customer reports being charged twice for an order. Customer support checks the payment records and confirms the duplicate settlement. The excess payment is refunded, and the complaint is closed after the refund has been initiated and the customer notified.
+
+7. Customer Privacy and Data Protection Policy
+7.1 Information collected
+The company may collect customer names, contact information, delivery addresses, transaction histories, payment references, and customer service records.
+
+Only information reasonably necessary for business operations should be collected.
+7.2 Permitted uses
+Customer information may be processed for order fulfillment, payment reconciliation, customer support, fraud prevention, statutory recordkeeping, and marketing where legally permitted.
+
+Marketing use must comply with applicable consent and opt-out requirements.
+7.3 Access controls
+Employee role	Permitted access
+Sales representative	Assigned customer orders
+Store manager	Orders and operational reports for their store
+Regional manager	Regional operational records
+Finance team	Payment and refund records
+Customer support	Information required to resolve complaints
+Data analyst	Approved, preferably minimized or pseudonymized datasets
+
+Employees must not access customer information without a legitimate business purpose.
+7.4 Data security
+The company must use role-based access controls, secure authentication, encryption where appropriate, and access logging for sensitive systems.
+
+Customer information must not be exported to personal devices or unauthorized cloud services.
+7.5 Retention and deletion
+Personal data must be retained only for defined business or legal purposes. A formal retention schedule must specify periods for invoices, transaction histories, support records, and marketing data.
+
+Requests to access, correct, or delete personal information must be reviewed in accordance with applicable data protection law.
+7.6 Data incidents
+Suspected unauthorized access, accidental disclosure, or loss of customer data must be reported immediately to the security or privacy team.
+
+The incident team must investigate, contain the issue, document its impact, and assess any applicable notification obligations.
+
+Example: A regional analyst requires sales data for a performance dashboard. The analyst should receive only the necessary fields, such as region, store, product, order value, and delivery performance. Customer names should be excluded unless specifically justified.
+
+8. Product Warranty and Quality Assurance Policy
+8.1 Product quality standards
+All products must meet applicable safety, quality, and manufacturer specifications before sale.
+
+The company must not knowingly sell defective, counterfeit, or recalled products.
+8.2 Warranty coverage
+Warranty periods and conditions depend on the product and manufacturer. The company must communicate the applicable warranty terms at purchase.
+
+Warranty claims may cover manufacturing defects, premature component failure, and other issues explicitly included in the warranty agreement.
+8.3 Warranty exclusions
+Voluntary warranty coverage may exclude accidental damage, misuse, unauthorized repairs, improper installation, and normal wear and tear.
+
+These exclusions do not override mandatory consumer protections.
+8.4 Warranty claim process
+Customers must provide the Order ID, product description, and details of the reported defect.
+
+The support team verifies warranty eligibility, coordinates technical inspection where necessary, and communicates the available remedy.
+8.5 Quality monitoring
+The operations team should review product return rates, warranty claim frequency, repeated defects, and supplier-related complaints monthly.
+
+Products showing unusually high defect rates must be flagged for investigation.
+
+Example: A customer reports that a laptop purchased four months ago no longer powers on. Support checks the warranty terms and arranges inspection. If a covered manufacturing defect is confirmed, the customer receives the applicable repair, replacement, or other remedy.
+
+9. Liability and Limitation of Responsibility
+9.1 General responsibilities
+The company is responsible for exercising reasonable care in order processing, payment handling, product fulfillment, and customer service.
+9.2 Order fulfillment liability
+Where the company supplies an incorrect product or fails to deliver an accepted order, it must investigate and provide an appropriate remedy.
+
+Available remedies may include replacement, correction, refund, or other compensation required by law.
+9.3 Financial liability
+For claims where a contractual limitation is legally permitted, the company's liability may be limited to the amount paid for the affected goods or services.
+
+This limitation does not apply where prohibited by law, including applicable liability for fraud, serious misconduct, or other non-excludable obligations.
+9.4 Third-party services
+The company may use external logistics providers and payment processors.
+
+The involvement of a third party does not automatically remove the company's obligations to customers.
+9.5 Events beyond reasonable control
+Disruptions caused by natural disasters, government restrictions, widespread transportation interruptions, or similar extraordinary events may affect fulfillment.
+
+The company must take reasonable steps to minimize disruption and communicate with affected customers.
+
+Example: A regional logistics disruption delays delivery of several desks. The company informs affected customers, provides revised delivery estimates, and considers cancellation or refund requests under the applicable contract and consumer law.
+
+10. Sales Operations and Employee Responsibilities
+10.1 Employee accountability
+Every sales transaction must identify the responsible salesperson, store, and relevant region.
+
+Employees must ensure that order records accurately reflect customer details, products, quantities, prices, discounts, and payment status.
+10.2 Sales representative responsibilities
+Sales representatives must follow approved pricing rules, explain material terms to customers, avoid misleading statements, and promptly escalate order irregularities.
+
+Employees may not create fictitious orders, manipulate transaction dates, or approve unauthorized refunds.
+10.3 Store manager responsibilities
+Store managers supervise order accuracy, inventory reconciliation, delivery coordination, staff compliance, and routine customer complaints.
+
+They may approve transactions within their assigned authorization limits.
+10.4 Regional manager responsibilities
+Regional managers oversee operational performance, high-value exceptions, complex customer disputes, and regional compliance.
+10.5 Performance monitoring
+The company may track the following indicators:
+KPI	Illustrative target
+Order accuracy	≥ 99%
+On-time delivery	≥ 95%
+Return rate	≤ 8%
+Complaints resolved within SLA	≥ 90%
+Unauthorized discount incidents	0
+Refund initiation within SLA	≥ 95%
+
+Targets are proposed internal benchmarks and should be reviewed against actual operating performance.
+
+Example: A store's return rate increases from 4% to 12% over two months. The store manager must investigate whether the increase is related to particular products, suppliers, employees, or fulfillment problems.
+
+11. Fraud Prevention and Transaction Monitoring
+11.1 Purpose
+The company maintains controls to detect and prevent payment fraud, refund abuse, promotional misuse, and internal transaction manipulation.
+11.2 Potential fraud indicators
+Transactions may be flagged for review when they exhibit unusual characteristics, including repeated high-value orders, frequent returns, excessive discounts, or multiple payment failures.
+
+A suspicious pattern does not establish fraud by itself.
+11.3 Illustrative monitoring rules
+Rule	Example trigger	Action
+High-value purchase	Order above ₹200,000	Additional verification
+Repeated returns	More than 3 returns in 30 days	Manual review
+Excessive discount	Discount above approved authority	Approval check
+Repeated payment failures	5 failures within 24 hours	Payment risk review
+Duplicate order	Matching customer, product, and amount in a short period	Verify before fulfillment
+
+Thresholds are illustrative and must be validated before operational use.
+11.4 Investigation procedures
+Fraud alerts must be assigned to authorized personnel. Investigators should examine transaction records, payment references, customer communication, and relevant operational evidence.
+
+Customer information must be handled confidentially, and adverse action should not be based solely on an unexplained automated risk score.
+11.5 Internal fraud
+Employees suspected of manipulating discounts, returns, or sales records may be subject to an internal investigation and appropriate disciplinary procedures.
+
+Example: A salesperson repeatedly applies discounts exceeding their authorization level. The system flags these transactions, and the regional manager reviews the approvals and supporting records before deciding on corrective action.
+
+12. Policy Governance, Exceptions and Updates
+12.1 Policy ownership
+The operations department owns the handbook. Finance, customer support, legal, privacy, and information security teams are responsible for their respective policy areas.
+12.2 Exception management
+Policy exceptions must be documented and approved by an employee with appropriate authority.
+
+Each exception record should include the relevant Order ID, requested deviation, business justification, approver, decision date, and supporting evidence.
+
+Exceptions cannot override applicable legal requirements.
+12.3 Policy review
+The handbook should be reviewed at least annually and whenever significant operational, legal, or regulatory changes occur.
+12.4 Policy communication
+Employees must have access to the current policy version and receive training on changes affecting their responsibilities.
+12.5 Audit and compliance
+The company may conduct periodic reviews of transaction accuracy, refund processing, discount approvals, complaint handling, and access to customer data.
+
+Identified control weaknesses must be assigned an owner and remediation deadline.
+
+13. Operational reference for your sample dataset
+To make this handbook useful for an AI agent, the policies can be mapped to transaction attributes and retrieval requirements.
+Policy area	Dataset fields	Example agent question
+Order management	OrderID, OrderDate, Quantity	Can this order be canceled?
+Pricing	UnitPrice, Discount, PromoCode	Was the correct discount applied?
+Payment	PaymentMethod, TotalPrice	What refund method should be used?
+Delivery	OrderDate, DeliveryDate, ShippingCost	Was this delivery delayed?
+Returns	Returned, Product, DeliveryDate	Is this product eligible for return?
+Disputes	OrderID, Store, RegionManager	Who should handle this complaint?
+Privacy	CustomerName, CustomerType	Can an analyst access customer information?
+Fraud	Quantity, Discount, TotalPrice	Does this transaction require review?
