@@ -1,0 +1,1555 @@
+{
+  "metadata": {
+    "company": "Regional Retail & Wholesale Co.",
+    "document_title": "Sample Company Policy Knowledge Base",
+    "version": "1.0",
+    "created_date": "2026-10-25",
+    "disclaimer": "Entirely illustrative; not legally approved, not actual policies inferred from the sales dataset.",
+    "source_dataset": "sample_data.xlsx",
+    "record_count": 44,
+    "time_unit_note": "Return windows are calendar days; refund and complaint targets are business days. Check each policy content for precise interpretation.",
+    "chroma_usage": "Embed title + section + content + conditions + exceptions; flatten scalar/list metadata for Chroma, retain full JSON separately."
+  },
+  "policies": [
+    {
+      "policy_id": "ORDER-001",
+      "section": "General Order Management",
+      "subsection": "confirmation",
+      "title": "Order confirmation",
+      "category": "order",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "An order is confirmed after inventory, customer details, price and discount validation, payment authorization or approved credit terms, and issuance of a unique Order ID.",
+      "conditions": [
+        "All required checks passed"
+      ],
+      "exceptions": [
+        "Acknowledgement alone does not guarantee fulfillment"
+      ],
+      "approval_role": "Sales Representative",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "order",
+        "confirmed",
+        "payment"
+      ],
+      "example_questions": [
+        "When is my order confirmed?"
+      ],
+      "dataset_fields": [
+        "OrderID",
+        "OrderDate",
+        "Quantity"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "ORDER-002",
+      "section": "General Order Management",
+      "subsection": "cancellation",
+      "title": "Order cancellation",
+      "category": "order",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Pending orders may be canceled without charge; confirmed orders may be canceled before dispatch subject to payment and inventory adjustments. Dispatched orders follow interception or return procedures.",
+      "conditions": [
+        "Order status verified"
+      ],
+      "exceptions": [
+        "Delivered orders follow return policy"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "cancel",
+        "dispatch"
+      ],
+      "example_questions": [
+        "Can I cancel my order after dispatch?"
+      ],
+      "dataset_fields": [
+        "OrderID",
+        "OrderDate",
+        "DeliveryDate"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "ORDER-003",
+      "section": "General Order Management",
+      "subsection": "modification",
+      "title": "Order modification",
+      "category": "order",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Before dispatch, changes to quantity, product or address require inventory validation, repricing and authorization of any payment difference.",
+      "conditions": [
+        "Not dispatched"
+      ],
+      "exceptions": [
+        "Wholesale contract may restrict changes"
+      ],
+      "approval_role": "Sales Representative",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "modify",
+        "quantity"
+      ],
+      "example_questions": [
+        "Can I increase my order quantity?"
+      ],
+      "dataset_fields": [
+        "OrderID",
+        "Quantity",
+        "Product"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "ORDER-004",
+      "section": "General Order Management",
+      "subsection": "wholesale",
+      "title": "Wholesale verification",
+      "category": "order",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Orders of 10 or more units may require additional stock verification; orders of 50 or more units require sales manager approval unless preapproved by agreement.",
+      "conditions": [
+        "CustomerType is Wholesale"
+      ],
+      "exceptions": [
+        "Preapproved contractual terms"
+      ],
+      "approval_role": "Sales Manager",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "wholesale",
+        "bulk"
+      ],
+      "example_questions": [
+        "Who approves a 50-unit order?"
+      ],
+      "dataset_fields": [
+        "CustomerType",
+        "Quantity"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PRICING-001",
+      "section": "Pricing, Discounts and Promotions",
+      "subsection": "calculation",
+      "title": "Order pricing",
+      "category": "pricing",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Product subtotal equals quantity times unit price times (1 minus discount rate); separately applicable taxes and shipping are accounted for according to checkout terms.",
+      "conditions": [
+        "Discount is interpreted as a fraction"
+      ],
+      "exceptions": [
+        "Dataset TotalPrice may follow a different accounting convention; verify before calculating"
+      ],
+      "approval_role": "Sales Representative",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "price",
+        "discount",
+        "total"
+      ],
+      "example_questions": [
+        "How is the final price calculated?"
+      ],
+      "dataset_fields": [
+        "Quantity",
+        "UnitPrice",
+        "Discount",
+        "TotalPrice",
+        "ShippingCost"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PRICING-002",
+      "section": "Pricing, Discounts and Promotions",
+      "subsection": "discount-approval",
+      "title": "Discount authorization",
+      "category": "pricing",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Discretionary discounts from 0 to 10% require sales representative authority; above 10% to 20% store manager; above 20% to 30% regional manager; above 30% commercial director.",
+      "conditions": [
+        "Applies to discretionary discounts"
+      ],
+      "exceptions": [
+        "Centrally approved promotions may use separate limits"
+      ],
+      "approval_role": "Commercial Director",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "discount",
+        "approval"
+      ],
+      "example_questions": [
+        "Who approves a 25% discount?"
+      ],
+      "dataset_fields": [
+        "Discount",
+        "Salesperson",
+        "RegionManager"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PRICING-003",
+      "section": "Pricing, Discounts and Promotions",
+      "subsection": "promotion",
+      "title": "Promotional eligibility",
+      "category": "pricing",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Illustrative codes SAVE10, WINTER15 and FREESHIP are subject to validity, product and customer eligibility; one promotional code per order unless stacking is explicitly authorized.",
+      "conditions": [
+        "Promotion valid at order time"
+      ],
+      "exceptions": [
+        "Express shipping may be excluded from FREESHIP"
+      ],
+      "approval_role": "Store Manager",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "promo",
+        "SAVE10",
+        "WINTER15",
+        "FREESHIP"
+      ],
+      "example_questions": [
+        "Can I stack two promo codes?"
+      ],
+      "dataset_fields": [
+        "Promotion",
+        "Discount",
+        "ShippingCost"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PRICING-004",
+      "section": "Pricing, Discounts and Promotions",
+      "subsection": "overcharge",
+      "title": "Pricing error resolution",
+      "category": "pricing",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Confirmed overcharges are corrected and refund initiation targeted within seven business days after approval.",
+      "conditions": [
+        "Verified invoice error"
+      ],
+      "exceptions": [
+        "Mandatory legal remedies take precedence"
+      ],
+      "approval_role": "Finance Team",
+      "timeline_days": 7,
+      "timeline_unit": "business_days",
+      "keywords": [
+        "overcharge",
+        "refund"
+      ],
+      "example_questions": [
+        "What happens if I was overcharged?"
+      ],
+      "dataset_fields": [
+        "TotalPrice",
+        "UnitPrice",
+        "Discount"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PAYMENT-001",
+      "section": "Payments and Refunds",
+      "subsection": "methods",
+      "title": "Accepted payment methods",
+      "category": "payment",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Accepted methods include credit card, debit card, cash, gift card and approved online payments; provide a receipt and avoid retaining full card credentials in ordinary records.",
+      "conditions": [
+        "Payment method accepted by channel"
+      ],
+      "exceptions": [
+        "Approved wholesale credit terms"
+      ],
+      "approval_role": "Finance Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "payment",
+        "card",
+        "cash"
+      ],
+      "example_questions": [
+        "Can I pay by gift card?"
+      ],
+      "dataset_fields": [
+        "PaymentMethod"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PAYMENT-002",
+      "section": "Payments and Refunds",
+      "subsection": "refund-eligibility",
+      "title": "Refund eligibility",
+      "category": "payment",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Refunds may be approved for eligible returns, canceled orders, duplicate payments, confirmed overcharges and qualifying defective products.",
+      "conditions": [
+        "Claim verified"
+      ],
+      "exceptions": [
+        "Consumer rights override voluntary restrictions"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "refund",
+        "eligible"
+      ],
+      "example_questions": [
+        "When am I eligible for a refund?"
+      ],
+      "dataset_fields": [
+        "Returned",
+        "OrderID",
+        "TotalPrice"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PAYMENT-003",
+      "section": "Payments and Refunds",
+      "subsection": "refund-timeline",
+      "title": "Refund processing timeline",
+      "category": "payment",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Acknowledge request within two business days; inspect received return within three; decide within two business days after inspection; initiate approved refund within seven business days. Bank settlement may take longer.",
+      "conditions": [
+        "Approved refund"
+      ],
+      "exceptions": [
+        "Complex cases may require communicated extensions"
+      ],
+      "approval_role": "Finance Team",
+      "timeline_days": 7,
+      "timeline_unit": "business_days",
+      "keywords": [
+        "refund",
+        "timeline",
+        "bank"
+      ],
+      "example_questions": [
+        "How long will my refund take?"
+      ],
+      "dataset_fields": [
+        "Returned",
+        "PaymentMethod"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PAYMENT-004",
+      "section": "Payments and Refunds",
+      "subsection": "partial-refund",
+      "title": "Partial refund calculation",
+      "category": "payment",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "For partial returns, base refund on the amount actually paid for affected units after allocated discounts, subject to lawful charges and agreed terms.",
+      "conditions": [
+        "Only part of order returned"
+      ],
+      "exceptions": [
+        "Special promotions may require allocation review"
+      ],
+      "approval_role": "Finance Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "partial",
+        "refund",
+        "units"
+      ],
+      "example_questions": [
+        "How is a two-item refund calculated?"
+      ],
+      "dataset_fields": [
+        "Quantity",
+        "UnitPrice",
+        "Discount",
+        "TotalPrice"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "DELIVERY-001",
+      "section": "Delivery and Shipping",
+      "subsection": "targets",
+      "title": "Delivery targets",
+      "category": "delivery",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Illustrative delivery targets: local 1–3, regional 3–7, interregional 5–10, bulk wholesale 7–15 business days from dispatch. These are estimates unless guaranteed in the order agreement.",
+      "conditions": [
+        "Service area and courier coverage"
+      ],
+      "exceptions": [
+        "Force majeure and communicated disruption"
+      ],
+      "approval_role": "Logistics Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "delivery",
+        "shipping",
+        "ETA"
+      ],
+      "example_questions": [
+        "When should my order arrive?"
+      ],
+      "dataset_fields": [
+        "OrderDate",
+        "DeliveryDate",
+        "Region"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "DELIVERY-002",
+      "section": "Delivery and Shipping",
+      "subsection": "fees",
+      "title": "Shipping charges",
+      "category": "delivery",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Shipping costs depend on destination, dimensions, weight, order value and service level; disclose fees before confirmation. FREESHIP may waive eligible standard fees.",
+      "conditions": [
+        "Shipping fee shown at checkout"
+      ],
+      "exceptions": [
+        "Express or special handling may be excluded"
+      ],
+      "approval_role": "Logistics Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "shipping",
+        "fee",
+        "FREESHIP"
+      ],
+      "example_questions": [
+        "Does FREESHIP cover express shipping?"
+      ],
+      "dataset_fields": [
+        "ShippingCost",
+        "Promotion"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "DELIVERY-003",
+      "section": "Delivery and Shipping",
+      "subsection": "delay",
+      "title": "Delayed delivery",
+      "category": "delivery",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Investigate delivery beyond estimated window, communicate revised ETA, and review cancellation or refund requests when delay exceeds five business days beyond promised date, subject to law and contract.",
+      "conditions": [
+        "Confirmed missed delivery target"
+      ],
+      "exceptions": [
+        "Third-party delays do not automatically eliminate seller obligations"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": 5,
+      "timeline_unit": "business_days",
+      "keywords": [
+        "delay",
+        "late",
+        "ETA"
+      ],
+      "example_questions": [
+        "My delivery is six days late; what can I do?"
+      ],
+      "dataset_fields": [
+        "OrderDate",
+        "DeliveryDate"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "DELIVERY-004",
+      "section": "Delivery and Shipping",
+      "subsection": "damage",
+      "title": "Damaged or missing parcel",
+      "category": "delivery",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Customers are encouraged to report visible damage within 48 hours and missing parcels promptly. Review courier evidence and provide legally appropriate remedies; late reporting does not automatically remove statutory rights.",
+      "conditions": [
+        "Claim linked to order"
+      ],
+      "exceptions": [
+        "Statutory rights unaffected by reporting guidance"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "damaged",
+        "missing",
+        "package"
+      ],
+      "example_questions": [
+        "What if my parcel arrived damaged?"
+      ],
+      "dataset_fields": [
+        "OrderID",
+        "DeliveryDate"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "RETURN-001",
+      "section": "Returns and Exchanges",
+      "subsection": "retail-window",
+      "title": "Retail return window",
+      "category": "return",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Eligible retail change-of-mind returns may be requested within 15 calendar days after delivery. Product should be unused, resaleable, and include accessories and proof of purchase.",
+      "conditions": [
+        "Retail customer",
+        "Within 15 calendar days of delivery"
+      ],
+      "exceptions": [
+        "Defects, wrong items and mandatory consumer remedies may be handled outside standard window"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": 15,
+      "timeline_unit": "business_days",
+      "keywords": [
+        "return",
+        "15 days",
+        "eligibility"
+      ],
+      "example_questions": [
+        "Can I return my monitor after 12 days?"
+      ],
+      "dataset_fields": [
+        "CustomerType",
+        "DeliveryDate",
+        "Returned",
+        "Product"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "RETURN-002",
+      "section": "Returns and Exchanges",
+      "subsection": "electronics",
+      "title": "Electronics return preparation",
+      "category": "return",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "For laptops, phones and tablets, customers should back up and remove personal data and disable account locks before return where possible; accessories should be included.",
+      "conditions": [
+        "Electronic product"
+      ],
+      "exceptions": [
+        "Defective products assessed under legal rights regardless of change-of-mind conditions"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": 15,
+      "timeline_unit": "business_days",
+      "keywords": [
+        "laptop",
+        "phone",
+        "tablet",
+        "reset"
+      ],
+      "example_questions": [
+        "Do I need to reset a phone before returning it?"
+      ],
+      "dataset_fields": [
+        "Product",
+        "DeliveryDate"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "RETURN-003",
+      "section": "Returns and Exchanges",
+      "subsection": "furniture",
+      "title": "Furniture returns",
+      "category": "return",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Desks and chairs are eligible for standard returns within 15 calendar days if there is no significant wear or damage; disassembly may be required.",
+      "conditions": [
+        "Change-of-mind return"
+      ],
+      "exceptions": [
+        "Faulty goods reviewed separately"
+      ],
+      "approval_role": "Store Manager",
+      "timeline_days": 15,
+      "timeline_unit": "business_days",
+      "keywords": [
+        "chair",
+        "desk",
+        "furniture"
+      ],
+      "example_questions": [
+        "Can I return an assembled desk?"
+      ],
+      "dataset_fields": [
+        "Product",
+        "DeliveryDate"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "RETURN-004",
+      "section": "Returns and Exchanges",
+      "subsection": "workflow",
+      "title": "Return workflow",
+      "category": "return",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Customer submits Order ID and reason; support checks eligibility; company issues instructions; item is inspected; refund, exchange or replacement decision is communicated.",
+      "conditions": [
+        "Valid order reference"
+      ],
+      "exceptions": [
+        "Warranty or statutory claim may follow a different process"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "return",
+        "RMA",
+        "inspection"
+      ],
+      "example_questions": [
+        "What are the steps to return an item?"
+      ],
+      "dataset_fields": [
+        "OrderID",
+        "Returned"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "RETURN-005",
+      "section": "Returns and Exchanges",
+      "subsection": "wholesale",
+      "title": "Wholesale returns",
+      "category": "return",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Bulk change-of-mind returns require manager approval and follow negotiated terms; defective or incorrect fulfillment claims are reviewed independently.",
+      "conditions": [
+        "Wholesale customer"
+      ],
+      "exceptions": [
+        "Contract and mandatory legal protections"
+      ],
+      "approval_role": "Regional Manager",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "wholesale",
+        "bulk",
+        "return"
+      ],
+      "example_questions": [
+        "Can a wholesale customer return 20 chairs?"
+      ],
+      "dataset_fields": [
+        "CustomerType",
+        "Quantity",
+        "Returned"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "DISPUTE-001",
+      "section": "Dispute Resolution",
+      "subsection": "intake",
+      "title": "Complaint registration",
+      "category": "dispute",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Assign each complaint a reference linked to Order ID; capture category, evidence, submitted date, owner, status and outcome. Acknowledge within two business days.",
+      "conditions": [
+        "Complaint received"
+      ],
+      "exceptions": [
+        "Anonymous safety or security reports may not have an Order ID"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": 2,
+      "timeline_unit": "business_days",
+      "keywords": [
+        "complaint",
+        "ticket",
+        "acknowledgement"
+      ],
+      "example_questions": [
+        "How do I file a complaint?"
+      ],
+      "dataset_fields": [
+        "OrderID",
+        "StoreLocation"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "DISPUTE-002",
+      "section": "Dispute Resolution",
+      "subsection": "sla",
+      "title": "Complaint priority targets",
+      "category": "dispute",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Critical safety/fraud cases require urgent action within 1–2 business days; high-priority cases target 3 days; medium 7; low 10. These are internal targets, not guaranteed closure times.",
+      "conditions": [
+        "Priority assigned"
+      ],
+      "exceptions": [
+        "Complex cases require progress updates"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "SLA",
+        "priority",
+        "complaint"
+      ],
+      "example_questions": [
+        "How fast is a missing-delivery complaint handled?"
+      ],
+      "dataset_fields": [
+        "OrderID"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "DISPUTE-003",
+      "section": "Dispute Resolution",
+      "subsection": "escalation",
+      "title": "Dispute escalation",
+      "category": "dispute",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Escalation path: Customer Support, Store Manager, Regional Manager, then Compliance or Legal for regulatory or unresolved formal complaints.",
+      "conditions": [
+        "Unresolved at current level"
+      ],
+      "exceptions": [
+        "Critical security or safety issues can bypass stages"
+      ],
+      "approval_role": "Regional Manager",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "escalation",
+        "manager",
+        "dispute"
+      ],
+      "example_questions": [
+        "Who handles an unresolved dispute?"
+      ],
+      "dataset_fields": [
+        "StoreLocation",
+        "RegionManager"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "DISPUTE-004",
+      "section": "Dispute Resolution",
+      "subsection": "closure",
+      "title": "Complaint closure",
+      "category": "dispute",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Close after communicating resolution, completing actions and recording outcome; inform customer of external escalation rights where applicable.",
+      "conditions": [
+        "Resolution actions completed"
+      ],
+      "exceptions": [
+        "Reopen if new evidence arises"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "close",
+        "resolution"
+      ],
+      "example_questions": [
+        "When can my complaint be closed?"
+      ],
+      "dataset_fields": [
+        "OrderID"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PRIVACY-001",
+      "section": "Privacy and Data Protection",
+      "subsection": "collection",
+      "title": "Data minimization",
+      "category": "privacy",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Collect customer and transaction information only for specified legitimate purposes such as fulfillment, payments, support, fraud controls and legal recordkeeping.",
+      "conditions": [
+        "Defined processing purpose"
+      ],
+      "exceptions": [
+        "Additional use requires lawful basis"
+      ],
+      "approval_role": "Privacy Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "privacy",
+        "personal data"
+      ],
+      "example_questions": [
+        "Why is my data collected?"
+      ],
+      "dataset_fields": [
+        "CustomerName",
+        "OrderID",
+        "PaymentMethod"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PRIVACY-002",
+      "section": "Privacy and Data Protection",
+      "subsection": "access",
+      "title": "Role-based access",
+      "category": "privacy",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Salespeople access assigned orders; store and regional managers access their scope; finance accesses payments; support accesses necessary complaints; analysts should use minimized or pseudonymized data where possible.",
+      "conditions": [
+        "Legitimate business need"
+      ],
+      "exceptions": [
+        "Temporary privileged access requires approval"
+      ],
+      "approval_role": "Privacy Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "RBAC",
+        "analyst",
+        "access"
+      ],
+      "example_questions": [
+        "Can analysts see customer names?"
+      ],
+      "dataset_fields": [
+        "CustomerName",
+        "Salesperson",
+        "RegionManager"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PRIVACY-003",
+      "section": "Privacy and Data Protection",
+      "subsection": "retention",
+      "title": "Retention and rights",
+      "category": "privacy",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Maintain a documented retention schedule; review lawful requests for access, correction and deletion subject to applicable law and required records. No fixed universal retention duration is specified in this sample.",
+      "conditions": [
+        "Verified requester identity"
+      ],
+      "exceptions": [
+        "Legal retention duties may prevent immediate deletion"
+      ],
+      "approval_role": "Privacy Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "delete",
+        "retention",
+        "access request"
+      ],
+      "example_questions": [
+        "Can I request deletion of my records?"
+      ],
+      "dataset_fields": [
+        "CustomerName",
+        "OrderID"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "PRIVACY-004",
+      "section": "Privacy and Data Protection",
+      "subsection": "incident",
+      "title": "Data security incidents",
+      "category": "privacy",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Immediately escalate suspected unauthorized access, disclosure or loss; contain, investigate, document impact and assess notification obligations.",
+      "conditions": [
+        "Suspected incident"
+      ],
+      "exceptions": [
+        "Applicable reporting requirements prevail"
+      ],
+      "approval_role": "Information Security",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "breach",
+        "incident",
+        "security"
+      ],
+      "example_questions": [
+        "What if customer records are exposed?"
+      ],
+      "dataset_fields": [
+        "CustomerName",
+        "PaymentMethod"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "WARRANTY-001",
+      "section": "Warranty and Quality",
+      "subsection": "coverage",
+      "title": "Manufacturer warranty",
+      "category": "warranty",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Communicate applicable manufacturer warranty terms at purchase; verify Order ID and defect description; assess repair, replacement or other remedies according to warranty and law. No universal warranty duration is assumed.",
+      "conditions": [
+        "Proof of purchase and covered defect"
+      ],
+      "exceptions": [
+        "Statutory remedies may apply independently"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "warranty",
+        "repair",
+        "replacement"
+      ],
+      "example_questions": [
+        "Is my laptop under warranty?"
+      ],
+      "dataset_fields": [
+        "Product",
+        "OrderID",
+        "OrderDate"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "WARRANTY-002",
+      "section": "Warranty and Quality",
+      "subsection": "exclusions",
+      "title": "Voluntary warranty exclusions",
+      "category": "warranty",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Accidental damage, misuse, unauthorized repairs, improper installation and ordinary wear may be excluded from voluntary warranty coverage, subject to applicable law.",
+      "conditions": [
+        "Warranty terms reviewed"
+      ],
+      "exceptions": [
+        "Non-excludable consumer rights"
+      ],
+      "approval_role": "Customer Support",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "warranty",
+        "exclusions"
+      ],
+      "example_questions": [
+        "Does warranty cover accidental damage?"
+      ],
+      "dataset_fields": [
+        "Product"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "WARRANTY-003",
+      "section": "Warranty and Quality",
+      "subsection": "quality",
+      "title": "Quality monitoring",
+      "category": "warranty",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Review return rates, warranty claims, supplier complaints and repeated defects monthly; investigate unusual defect patterns and recalls.",
+      "conditions": [
+        "Operational review cycle"
+      ],
+      "exceptions": [
+        "Safety issues escalated immediately"
+      ],
+      "approval_role": "Operations Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "quality",
+        "defects",
+        "returns"
+      ],
+      "example_questions": [
+        "How are repeated defects monitored?"
+      ],
+      "dataset_fields": [
+        "Product",
+        "Returned"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "LIABILITY-001",
+      "section": "Liability and Responsibility",
+      "subsection": "fulfillment",
+      "title": "Fulfillment responsibility",
+      "category": "liability",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Investigate incorrect goods or failed delivery and provide appropriate correction, replacement, refund or other lawful remedy.",
+      "conditions": [
+        "Verified fulfillment issue"
+      ],
+      "exceptions": [
+        "Mandatory consumer protections prevail"
+      ],
+      "approval_role": "Operations Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "liability",
+        "incorrect item"
+      ],
+      "example_questions": [
+        "What if I receive the wrong product?"
+      ],
+      "dataset_fields": [
+        "OrderID",
+        "Product"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "LIABILITY-002",
+      "section": "Liability and Responsibility",
+      "subsection": "limits",
+      "title": "Contractual liability limits",
+      "category": "liability",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Where legally permissible, contractual liability may be limited to the amount paid for affected goods or services; no limitation applies where prohibited by law.",
+      "conditions": [
+        "Valid applicable contractual term"
+      ],
+      "exceptions": [
+        "Fraud and other non-excludable liabilities"
+      ],
+      "approval_role": "Legal Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "liability",
+        "limit"
+      ],
+      "example_questions": [
+        "What is the company liable for?"
+      ],
+      "dataset_fields": [
+        "TotalPrice"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "LIABILITY-003",
+      "section": "Liability and Responsibility",
+      "subsection": "disruption",
+      "title": "External disruption",
+      "category": "liability",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "For extraordinary disruptions, take reasonable mitigation steps, communicate delays and evaluate customer remedies; third-party providers do not automatically eliminate company obligations.",
+      "conditions": [
+        "Documented disruption"
+      ],
+      "exceptions": [
+        "Legal and contractual obligations"
+      ],
+      "approval_role": "Operations Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "force majeure",
+        "courier"
+      ],
+      "example_questions": [
+        "Who is responsible if a courier loses my parcel?"
+      ],
+      "dataset_fields": [
+        "DeliveryDate"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "OPERATIONS-001",
+      "section": "Sales Operations",
+      "subsection": "records",
+      "title": "Accurate sales records",
+      "category": "operations",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Salespeople must record correct customer, order, product, quantity, pricing, discount, payment, store and region data; fictitious orders and unauthorized changes are prohibited.",
+      "conditions": [
+        "All completed transactions"
+      ],
+      "exceptions": [
+        "Corrections must be auditable"
+      ],
+      "approval_role": "Store Manager",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "sales",
+        "accuracy",
+        "records"
+      ],
+      "example_questions": [
+        "Who is responsible for order accuracy?"
+      ],
+      "dataset_fields": [
+        "Salesperson",
+        "StoreLocation",
+        "OrderID"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "OPERATIONS-002",
+      "section": "Sales Operations",
+      "subsection": "authority",
+      "title": "Management responsibilities",
+      "category": "operations",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Store managers supervise inventory, complaints and routine approvals; regional managers oversee escalations, exceptions and regional compliance.",
+      "conditions": [
+        "Assigned management scope"
+      ],
+      "exceptions": [
+        "Legal or security matters may bypass management hierarchy"
+      ],
+      "approval_role": "Regional Manager",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "store manager",
+        "regional manager"
+      ],
+      "example_questions": [
+        "Who approves operational exceptions?"
+      ],
+      "dataset_fields": [
+        "StoreLocation",
+        "RegionManager"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "OPERATIONS-003",
+      "section": "Sales Operations",
+      "subsection": "kpis",
+      "title": "Operational performance targets",
+      "category": "operations",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Illustrative monthly targets: order accuracy >=99%, on-time delivery >=95%, returns <=8%, complaints within SLA >=90%, refund SLA >=95%, unauthorized discounts zero.",
+      "conditions": [
+        "Metrics calculated consistently"
+      ],
+      "exceptions": [
+        "Targets require baseline validation"
+      ],
+      "approval_role": "Operations Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "KPI",
+        "performance"
+      ],
+      "example_questions": [
+        "What is the on-time delivery target?"
+      ],
+      "dataset_fields": [
+        "Returned",
+        "DeliveryDate",
+        "OrderDate"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "FRAUD-001",
+      "section": "Fraud Prevention",
+      "subsection": "alerts",
+      "title": "Transaction risk alerts",
+      "category": "fraud",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Illustrative review triggers: order above INR 200000, more than three returns in 30 days, discount above authorization, five payment failures in 24 hours, or duplicate-like orders. Flags require human review and are not proof of fraud.",
+      "conditions": [
+        "Sufficient data available"
+      ],
+      "exceptions": [
+        "Sample dataset lacks payment failure and return event histories needed for some checks"
+      ],
+      "approval_role": "Fraud Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "fraud",
+        "threshold",
+        "duplicate"
+      ],
+      "example_questions": [
+        "What orders trigger fraud review?"
+      ],
+      "dataset_fields": [
+        "TotalPrice",
+        "Returned",
+        "Discount",
+        "OrderID"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "FRAUD-002",
+      "section": "Fraud Prevention",
+      "subsection": "investigation",
+      "title": "Fraud investigation",
+      "category": "fraud",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Authorized staff review payment references, transaction patterns and evidence; protect customer confidentiality and avoid adverse action based solely on an unexplained automated score.",
+      "conditions": [
+        "Alert validated"
+      ],
+      "exceptions": [
+        "Urgent safety or legal escalations"
+      ],
+      "approval_role": "Fraud Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "investigation",
+        "risk"
+      ],
+      "example_questions": [
+        "What happens after a fraud alert?"
+      ],
+      "dataset_fields": [
+        "OrderID",
+        "PaymentMethod"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "FRAUD-003",
+      "section": "Fraud Prevention",
+      "subsection": "internal",
+      "title": "Employee misuse",
+      "category": "fraud",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Investigate suspected manipulation of discounts, refunds or sales records through documented internal procedures and appropriate disciplinary channels.",
+      "conditions": [
+        "Credible allegation or evidence"
+      ],
+      "exceptions": [
+        "Employment and privacy laws apply"
+      ],
+      "approval_role": "Compliance Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "employee",
+        "misuse",
+        "discount"
+      ],
+      "example_questions": [
+        "What if a salesperson applies unauthorized discounts?"
+      ],
+      "dataset_fields": [
+        "Salesperson",
+        "Discount"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "GOVERNANCE-001",
+      "section": "Policy Governance",
+      "subsection": "ownership",
+      "title": "Policy ownership and review",
+      "category": "governance",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Operations owns the handbook with Finance, Legal, Support, Privacy and Security responsible for relevant sections; review at least annually and upon material changes.",
+      "conditions": [
+        "Approved governance process"
+      ],
+      "exceptions": [
+        "Urgent regulatory updates may occur sooner"
+      ],
+      "approval_role": "Operations Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "governance",
+        "review"
+      ],
+      "example_questions": [
+        "How often is the handbook reviewed?"
+      ],
+      "dataset_fields": [],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "GOVERNANCE-002",
+      "section": "Policy Governance",
+      "subsection": "exceptions",
+      "title": "Policy exceptions",
+      "category": "governance",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Document exception, Order ID, justification, approving role, decision and evidence; no exception may override applicable law.",
+      "conditions": [
+        "Appropriate delegated authority"
+      ],
+      "exceptions": [
+        "Non-excludable legal requirements"
+      ],
+      "approval_role": "Regional Manager",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "exception",
+        "approval"
+      ],
+      "example_questions": [
+        "How are policy exceptions approved?"
+      ],
+      "dataset_fields": [
+        "OrderID",
+        "RegionManager"
+      ],
+      "related_policy_ids": []
+    },
+    {
+      "policy_id": "GOVERNANCE-003",
+      "section": "Policy Governance",
+      "subsection": "audit",
+      "title": "Training and audit",
+      "category": "governance",
+      "customer_type": "All",
+      "product_category": "All",
+      "version": "1.0",
+      "status": "sample_not_approved",
+      "effective_date": null,
+      "content": "Communicate policy changes, train affected staff and periodically audit discounts, refunds, complaints, transaction accuracy and customer data access; assign remediation owners.",
+      "conditions": [
+        "Applicable business functions"
+      ],
+      "exceptions": [
+        "Critical control failures require immediate action"
+      ],
+      "approval_role": "Compliance Team",
+      "timeline_days": null,
+      "timeline_unit": null,
+      "keywords": [
+        "audit",
+        "training"
+      ],
+      "example_questions": [
+        "How is compliance audited?"
+      ],
+      "dataset_fields": [
+        "Discount",
+        "Returned",
+        "Salesperson"
+      ],
+      "related_policy_ids": []
+    }
+  ]
+}

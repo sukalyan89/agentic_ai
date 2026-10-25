@@ -15,7 +15,8 @@ st.set_page_config(page_title="Semantic Memory Explorer", page_icon="🧠", layo
 st.title("🧠 Semantic Memory Explorer")
 st.caption("Upload → Chunk → Embed → Store → Search. A visual ChromaDB demonstration.")
 
-DB_DIR = str(Path(__file__).resolve().parents[1] / "chroma_data")
+# DB_DIR = str(Path(__file__).resolve().parents[1] / "chroma_data")
+DB_DIR ="./chroma_data"
 COLLECTION = "webinar_semantic_memory"
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
