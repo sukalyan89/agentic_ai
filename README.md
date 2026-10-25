@@ -1,57 +1,44 @@
-# Streamlit AI Chatbot Starter
+# GitHub MCP Explorer
 
-A minimal browser-based chat UI with a placeholder Hello World backend.
+A Streamlit interface for discovering and invoking tools exposed by the
+official GitHub MCP server.
 
-## 1. Requirements
-- Python 3.9+
-- pip
+## Requirements
 
-## 2. Install dependencies
+- Python 3.10+
+- A GitHub personal access token with the permissions required by the tools
+  you plan to call
 
-Open a terminal in this folder and run:
+Install the Python dependencies:
 
-```bash
-python -m venv .venv
-```
-
-Activate the environment:
-
-**Windows PowerShell**
 ```powershell
-.venv\Scripts\Activate.ps1
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
 ```
 
-**Windows Command Prompt**
-```bat
-.venv\Scripts\activate.bat
+## Run the explorer
+
+```powershell
+streamlit run 2.6.mcp_server_explorer.py
 ```
 
-**macOS / Linux**
-```bash
-source .venv/bin/activate
+The explorer connects to GitHub's hosted MCP server at
+`https://api.githubcopilot.com/mcp/` using Streamable HTTP. No Docker or local
+MCP server process is needed.
+
+Set your GitHub personal access token in the project `.env` file:
+
+```dotenv
+GITHUB_PERSONAL_ACCESS_TOKEN=your_token_here
 ```
 
-Then install Streamlit:
+The token is loaded automatically and sent to the hosted server as a Bearer
+token. You can also enter or override it in the sidebar. The server URL can be
+changed there as well; `GITHUB_MCP_SERVER_URL` in `.env` can set a different
+default. The hosted service and token must be available to your account and
+have the permissions required by the tools you call.
 
-```bash
-pip install -r requirements.txt
-```
-
-## 3. Run the app
-
-```bash
-streamlit run app.py
-```
-
-Streamlit will open the app in your browser. If it doesn't, visit the local URL shown in the terminal (usually `http://localhost:8501`).
-
-## Where to connect an AI model later
-
-In `app.py`, replace the `get_bot_response(user_message)` function with a call to your chosen model or API. Keep API keys in environment variables or Streamlit secrets rather than hard-coding them in the source.
-
-## Current features
-- Chat-style message bubbles
-- Input box at the bottom
-- Conversation stored in Streamlit session state
-- Sidebar with a Clear chat button
-- Placeholder backend response
+Select a discovered tool to inspect its input schema, enter its arguments as a
+JSON object, and choose **Call tool**. The result or any connection/tool error
+is shown on the page.
