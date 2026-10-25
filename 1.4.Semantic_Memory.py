@@ -15,9 +15,8 @@ st.set_page_config(page_title="Semantic Memory Explorer", page_icon="🧠", layo
 st.title("🧠 Semantic Memory Explorer")
 st.caption("Upload → Chunk → Embed → Store → Search. A visual ChromaDB demonstration.")
 
-# DB_DIR = str(Path(__file__).resolve().parents[1] / "chroma_data")
-DB_DIR ="./chroma_data"
-COLLECTION = "webinar_semantic_memory"
+DB_DIR = str(Path(__file__).resolve().parent / "chroma_data")
+DEFAULT_COLLECTION = "webinar_semantic_memory"
 MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 @st.cache_resource(show_spinner="Loading local embedding model...")
@@ -30,7 +29,23 @@ def get_client():
 
 model = load_model()
 client = get_client()
-collection = client.get_or_create_collection(name=COLLECTION, metadata={"hnsw:space": "cosine"})
+client.get_or_create_collection(
+    name=DEFAULT_COLLECTION,
+    metadata={"hnsw:space": "cosine"},
+)
+
+
+def list_collection_names():
+    return sorted(
+        collection.name if hasattr(collection, "name") else collection
+        for collection in client.list_collections()
+    )
+
+
+collection_names = list_collection_names()
+if not collection_names:
+    st.error(f"No Chroma collections found in {DB_DIR}.")
+    st.stop()
 
 def extract_text(file):
     data = file.getvalue()
@@ -64,15 +79,47 @@ def split_text(text, chunk_size=600, overlap=100):
 def embed(texts):
     return model.encode(texts, normalize_embeddings=True, show_progress_bar=False).tolist()
 
+
+def get_memory_source(metadata):
+    metadata = metadata or {}
+    return (
+        metadata.get("source")
+        or metadata.get("policy_id")
+        or metadata.get("title")
+        or metadata.get("section")
+        or "Unknown source"
+    )
+
+
+def get_memory_chunk(metadata):
+    metadata = metadata or {}
+    return (
+        metadata.get("chunk_index")
+        or metadata.get("subsection")
+        or metadata.get("category")
+        or "N/A"
+    )
+
+
 with st.sidebar:
     st.header("⚙️ Vector database")
     st.write("**Engine:** ChromaDB (persistent)")
     st.write("**Embedding:** all-MiniLM-L6-v2")
+    selected_collection = st.selectbox(
+        "Chroma collection",
+        options=collection_names,
+        index=(
+            collection_names.index(DEFAULT_COLLECTION)
+            if DEFAULT_COLLECTION in collection_names
+            else 0
+        ),
+    )
+    collection = client.get_collection(name=selected_collection)
     st.metric("Stored chunks", collection.count())
     st.caption(f"Storage: {DB_DIR}")
     st.warning("Demo only: uploaded content stays on the machine running Streamlit. Do not upload confidential customer data.")
-    if st.button("🗑️ Delete all stored memories", use_container_width=True):
-        client.delete_collection(COLLECTION)
+    if st.button("🗑️ Delete selected collection", use_container_width=True):
+        client.delete_collection(selected_collection)
         st.cache_resource.clear()
         st.rerun()
 
@@ -124,12 +171,14 @@ with tab_search:
             vectors = np.asarray(results["embeddings"][0], dtype=float)
             scores = [max(0.0, min(1.0, 1.0 - float(d))) for d in distances]
             st.caption("Scores = 1 − cosine distance. They indicate vector similarity, not probability of correctness.")
-            df = pd.DataFrame({"Rank": range(1, len(docs) + 1), "Source": [m["source"] for m in metas], "Chunk": [m["chunk_index"] for m in metas], "Similarity": scores})
+            sources = [get_memory_source(meta) for meta in metas]
+            chunks = [get_memory_chunk(meta) for meta in metas]
+            df = pd.DataFrame({"Rank": range(1, len(docs) + 1), "Source": sources, "Chunk": chunks, "Similarity": scores})
             st.bar_chart(df.set_index("Rank")["Similarity"], y_label="Cosine similarity")
             for i, (doc, meta, score) in enumerate(zip(docs, metas, scores), start=1):
-                with st.expander(f"#{i} · {meta['source']} · similarity {score:.3f}", expanded=(i == 1)):
+                with st.expander(f"#{i} · {get_memory_source(meta)} · similarity {score:.3f}", expanded=(i == 1)):
                     st.write(doc)
-                    st.caption(f"Chunk index: {meta['chunk_index']}")
+                    st.caption(f"Chunk: {get_memory_chunk(meta)}")
             st.subheader("🗺️ Embedding projection (PCA)")
             if len(vectors) >= 2:
                 from sklearn.decomposition import PCA
@@ -148,7 +197,20 @@ with tab_explore:
     if total:
         limit = st.slider("Rows to inspect", 1, min(200, total), min(25, total))
         records = collection.get(limit=limit, include=["documents", "metadatas"])
-        rows = [{"ID": rid, "Source": meta["source"], "Chunk": meta["chunk_index"], "Text": doc} for rid, meta, doc in zip(records["ids"], records["metadatas"], records["documents"])]
+        rows = [
+            {
+                "ID": record_id,
+                "Source": get_memory_source(metadata),
+                "Chunk": get_memory_chunk(metadata),
+                "Text": document or "",
+                "Metadata": metadata or {},
+            }
+            for record_id, metadata, document in zip(
+                records["ids"],
+                records["metadatas"],
+                records["documents"],
+            )
+        ]
         st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True)
         st.caption("This table displays stored text and metadata. ChromaDB also stores embedding vectors for retrieval.")
     else:
