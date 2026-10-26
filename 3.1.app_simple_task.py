@@ -4,18 +4,22 @@ from queue import Empty, Queue
 import pandas as pd
 import streamlit as st
 
-from agents.sql_agent import get_database_schema, run_agent
+from agents.business_task_agent import run_agent
+from agents.sql_agent import get_database_schema
 from helper.create_db import DATABASE_PATH, create_database
 
 
 st.set_page_config(
-    page_title="CrewAI SQL Agent",
+    page_title="Agentic Business Analyst",
     page_icon="🤖",
     layout="centered",
 )
 
-st.title("🤖 CrewAI SQL Agent")
-st.caption("Ask questions about the sample sales dataset using natural language.")
+st.title("🤖 Agentic Business Analyst")
+st.caption(
+    "See the agent break down your business ask, query the sales data, "
+    "and turn its findings into actionable insights."
+)
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
@@ -135,6 +139,16 @@ if prompt:
                             progress.code(query, language="sql")
                             progress.update(
                                 label="🧮 Running a read-only SQL query...",
+                                state="running",
+                                expanded=True,
+                            )
+                        elif event == "plan":
+                            plan = (result or {}).get("text", "")
+                            progress.markdown(
+                                f"**Agent task breakdown**\n\n{plan}"
+                            )
+                            progress.update(
+                                label="Plan ready — gathering data and business insights...",
                                 state="running",
                                 expanded=True,
                             )
