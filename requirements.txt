@@ -2,7 +2,9 @@ streamlit>=1.35.0
 mcp>=1.0,<2.0
 chromadb
 crewai
+langfuse
 numpy
+openinference-instrumentation-crewai
 pandas
 pypdf
 python-dotenv
