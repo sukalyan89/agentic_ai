@@ -80,7 +80,7 @@ with st.sidebar:
                     st.warning("The tool limited the result to 100 rows.")
     else:
         st.caption("SQL statements and results will appear here after tool use.")
-
+ 
     st.divider()
     st.header("Token usage")
     usage = st.session_state.token_usage
