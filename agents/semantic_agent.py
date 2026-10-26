@@ -15,7 +15,7 @@ load_dotenv()
 
 COLLECTION_NAME = "webinar_semantic_memory"
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
-MEMORY_STORE_PATH = Path(__file__).resolve().parents[2] / "chroma_data"
+MEMORY_STORE_PATH = Path(__file__).resolve().parent / "chroma_data"
 
 
 @dataclass(frozen=True)

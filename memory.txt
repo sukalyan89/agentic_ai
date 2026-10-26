@@ -1,0 +1,9 @@
+User: My Name is Sukalyan 
+Assistant: Nice to meet you, Sukalyan! How can I help you today?
+
+User: What is my name ?
+Assistant: Your name is **Sukalyan**.
+
+User: How is the weather today ?
+Assistant: I’m not able to fetch live data, so I don’t know the current weather. Could you let me know which city or region you’re interested in? Then I can give you a general idea of what you might expect today.
+
