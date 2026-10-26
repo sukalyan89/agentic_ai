@@ -1,4 +1,6 @@
 
+from pathlib import Path
+
 import chromadb
 from chromadb.utils.embedding_functions import (
     SentenceTransformerEmbeddingFunction
@@ -8,7 +10,8 @@ embedding_fn = SentenceTransformerEmbeddingFunction(
     model_name="all-MiniLM-L6-v2"
 )
 
-client = chromadb.PersistentClient(path="./chroma_data")
+DB_DIR = Path(__file__).resolve().parents[1] / "chroma_data"
+client = chromadb.PersistentClient(path=str(DB_DIR))
 
 collection = client.get_collection(
     name="company_policies",

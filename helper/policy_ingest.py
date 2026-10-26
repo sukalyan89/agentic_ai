@@ -33,7 +33,7 @@ embedding_fn = SentenceTransformerEmbeddingFunction(
 )
 
 # 3. Initialize persistent ChromaDB
-DB_DIR = "./chroma_data"
+DB_DIR = str(Path(__file__).resolve().parents[1] / "chroma_data")
 client = chromadb.PersistentClient(path=DB_DIR)
 
 collection = client.get_or_create_collection(
