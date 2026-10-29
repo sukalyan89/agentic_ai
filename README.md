@@ -111,17 +111,24 @@ directory. It may download the embedding model the first time. `2.2` uses a
 different collection: fill that collection by running `1.4.Semantic_Memory.py`
 and uploading your own documents.
 
-## Environment variables
+## Environment variables and API keys
 
-| Variable | Used by | Where to get it |
+You only need to set credentials for the apps you want to run. Follow the
+provider's official guide or console to create each key, then paste it after
+the `=` in your local `.env` file:
+
+| Variable | Used by | How to get it |
 |---|---|---|
-| `GROQ_API_KEY` | `1.1`–`1.3`, `2.1`–`2.3`, `2.5`, `3.1`–`3.2`, `4.1` | Groq API account |
-| `TAVILY_API_KEY` | `2.3` (optional; required to enable web search) | Tavily API account |
-| `GITHUB_PERSONAL_ACCESS_TOKEN` | `2.6` | A GitHub personal access token with only the permissions needed by the MCP tools you intend to use |
-| `GITHUB_MCP_SERVER_URL` | `2.6` (optional) | Defaults to `https://api.githubcopilot.com/mcp/` |
-| `LANGFUSE_PUBLIC_KEY` | `4.1` | Langfuse project settings |
-| `LANGFUSE_SECRET_KEY` | `4.1` | Langfuse project settings |
-| `LANGFUSE_BASE_URL` | `4.1` (optional) | Langfuse host; defaults to `https://cloud.langfuse.com` |
+| `GROQ_API_KEY` | `1.1`–`1.3`, `2.1`–`2.3`, `2.5`, `3.1`–`3.2`, `4.1` | Sign in to the [Groq Console API Keys page](https://console.groq.com/keys) and create a key. |
+| `TAVILY_API_KEY` | `2.3` (optional; required to enable web search) | Create an account and get a key from the [Tavily API platform](https://app.tavily.com). See the [Tavily quickstart](https://docs.tavily.com/documentation/quickstart) for guidance. |
+| `GITHUB_PERSONAL_ACCESS_TOKEN` | `2.6` | Follow GitHub's guide to [create a fine-grained personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token). Grant only the repository access and permissions needed for the MCP tools you plan to use. |
+| `GITHUB_MCP_SERVER_URL` | `2.6` (optional) | No key required. Defaults to `https://api.githubcopilot.com/mcp/`; leave the template value unless you use another trusted MCP server. |
+| `LANGFUSE_PUBLIC_KEY` and `LANGFUSE_SECRET_KEY` | `4.1` | Follow Langfuse's [tracing quickstart](https://langfuse.com/docs/observability/get-started): create/sign in to an account, create a project, then create API credentials in the project settings. Keep the secret key private. |
+| `LANGFUSE_BASE_URL` | `4.1` (optional) | No key required. Use the base URL for your Langfuse Cloud region or self-hosted instance. The template defaults to `https://cloud.langfuse.com`; see the [Langfuse quickstart](https://langfuse.com/docs/observability/get-started) for region examples. |
+
+Treat API keys and access tokens like passwords: keep them only in your local
+`.env`, never paste them into source code, screenshots, issues, or commits, and
+revoke and replace any key that is accidentally exposed.
 
 LLM-powered apps send prompts to Groq. The search app sends search queries to
 Tavily when that tool is enabled, and `4.1` sends traces to Langfuse. Do not
