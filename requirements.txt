@@ -2,9 +2,11 @@ streamlit>=1.35.0
 mcp>=1.0,<2.0
 chromadb
 crewai
+groq
 langfuse
 numpy
 openinference-instrumentation-crewai
+openpyxl
 pandas
 pypdf
 python-dotenv
